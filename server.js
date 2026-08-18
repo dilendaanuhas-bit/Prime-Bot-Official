@@ -460,7 +460,7 @@ async function processMovieRequest(reqId, reqData, dbType = 'firestore') {
                 `📝 *Story:* ${story ? story.substring(0, 220) + '...' : 'Sinhala Subtitles & Movie Details'}\n\n` +
                 `📽️ *Selected Quality:* ${quality !== 'best' ? quality : (targetFiles[0]?.quality || 'Best Available')}\n` +
                 `────────────────────\n` +
-                `✨ *Requested via Chama Movie Portal* 🚀`;
+                `✨ *Requested via Pt Movie Portal* 🚀`;
         }
 
         // Send Poster Card
@@ -502,7 +502,7 @@ async function processMovieRequest(reqId, reqData, dbType = 'firestore') {
                               `⚠️ *File Size Too Large*\n` +
                               `📦 This file is *${fSizeStr}* which exceeds the 2GB WhatsApp upload limit.\n` +
                               `Please select a smaller quality (480p or 720p) and try again.\n\n` +
-                              `✨ *Powered by CHAMA TECH* 🚀`
+                              `✨ *Powered by PRIME TECH* 🚀`
                     });
                 } else {
                     // Files ≤ 2GB: Send directly as WhatsApp document
@@ -510,7 +510,7 @@ async function processMovieRequest(reqId, reqData, dbType = 'firestore') {
                         document: { url: directUrl },
                         mimetype: 'video/mp4',
                         fileName: `${title.trim()} [${qLabel}].mp4`,
-                        caption: `🎬 *${title.trim()}*\n🎥 *Quality:* ${qLabel}${fSizeLabel}\n\n✨ *Powered by CHAMA TECH* 🚀`
+                        caption: `🎬 *${title.trim()}*\n🎥 *Quality:* ${qLabel}${fSizeLabel}\n\n✨ *Powered by PRIME TECH* 🚀`
                     });
                 }
             } catch (docErr) {
@@ -521,7 +521,7 @@ async function processMovieRequest(reqId, reqData, dbType = 'firestore') {
                         text: `⚠️ *${title.trim()}* — Document upload failed.\n` +
                               `🎥 Quality: ${qLabel}${fSizeLabel}\n` +
                               `❌ Error: File could not be uploaded to WhatsApp. Please try a smaller quality.\n\n` +
-                              `✨ *Powered by CHAMA TECH* 🚀`
+                              `✨ *Powered by PRIME TECH* 🚀`
                     });
                 } catch (fallbackErr) {
                     console.log('Fallback text send error:', fallbackErr.message);
@@ -745,5 +745,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`\n🚀 Chama WhatsApp Bot Admin Server running on: http://localhost:${PORT}`);
+    console.log(`\n🚀 Prime WhatsApp Bot Admin Server running on: http://localhost:${PORT}`);
 });
