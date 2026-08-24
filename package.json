@@ -4,7 +4,7 @@
   "description": "Standalone Baileys WhatsApp Bot Server with MongoDB Session Persistence & Firebase Worker",
   "main": "server.js",
   "engines": {
-    "node": ">=18.x"
+    "node": ">=20.x"
   },
   "scripts": {
     "start": "node server.js",
